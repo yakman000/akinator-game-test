@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "functions": {
+    "api/fetchCharacters.js": {
+      "runtime": "nodejs14.x"
+    }
+  }
+}
+
