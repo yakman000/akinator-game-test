@@ -24,10 +24,16 @@ module.exports = async (req, res) => {
       })
     });
 
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
     const data = await response.json();
     const characters = JSON.parse(data.choices[0].message.content);
+    console.log('Characters fetched from OpenAI:', characters); // Log the fetched characters
     res.status(200).json(characters);
   } catch (error) {
+    console.error('Error fetching characters:', error.message); // Log any errors
     res.status(500).json({ error: error.message });
   }
 };
