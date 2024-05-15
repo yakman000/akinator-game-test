@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "functions": {
-    "api/fetchCharacters.js": {
-      "runtime": "vercel/node@20.x"
+  "builds": [
+    {
+      "src": "api/fetchCharacters.js",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/fetchCharacters",
