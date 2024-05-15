@@ -1,9 +1,16 @@
 {
   "version": 2,
-  "functions": {
-    "api/fetchCharacters.js": {
-      "runtime": "nodejs14.x"
+  "builds": [
+    {
+      "src": "api/fetchCharacters.js",
+      "use": "@vercel/node"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/api/fetchCharacters",
+      "dest": "/api/fetchCharacters.js"
+    }
+  ]
 }
 
